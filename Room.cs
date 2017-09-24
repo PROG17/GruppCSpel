@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpelGruppC1
 {
-    class Room
+    public class Room
     {
         public string RoomSize { get; set; }
         public int NumberOfDoors { get; set; }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SpelGruppC1
 {
-    class Door
+    public class Door
     {
         public bool Open = false;
         public bool Closed = true;
-        public bool Locked = true;
+        public bool Locked = false;
 
         public Door(bool open, bool closed, bool locked)
         {
@@ -18,6 +18,9 @@ namespace SpelGruppC1
             Closed = closed;
             Locked = locked;
         }
+
+
+
       
         public void OpenOrClosed()
         {

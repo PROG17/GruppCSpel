@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace SpelGruppC1
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            House brandStation = new House("Brandstation", "röd");
+            Player player = new Player();
+            House hus = new House("litet hus", 3, 3);
 
-            Console.WriteLine(brandStation.HouseType + " " + brandStation.HouseColor);
+            hus.HouseStoryLine();
+            
+
             Console.ReadLine();
+          
         }
     }
 

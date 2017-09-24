@@ -6,15 +6,46 @@ using System.Threading.Tasks;
 
 namespace SpelGruppC1
 {
-    class House
+    public class House
     {
-        public string HouseType { get; set; }
-        public string HouseColor { get; set; }
+        
+        string houseType;
+        int numberOfDoors;
+        int numberOfRooms;
 
-        public House(string houseType, string houseColor)
+        public House (string houseType, int numberOfDoors, int numberOfRooms)
         {
-            HouseType = houseType;
-            HouseColor = houseColor;
+            this.houseType = houseType;
+            this.numberOfDoors = numberOfDoors;
+            this.numberOfRooms = numberOfRooms;
         }
+
+        public virtual void HouseStoryLine()
+        {
+            Console.WriteLine("You are standing in the hallway, in front of you there are {0} doors", numberOfDoors);
+            Player.GoInDirection(Player.ChooseDirection()); //dessa är statiska metoder, bör ändras?
+            Console.ReadLine();
+        }
+
+        public virtual void InFrontOfDoor()
+        {
+            Door door1 = new Door(false, true, false);
+
+            Console.WriteLine("You are now standing in front of a door");
+            Console.WriteLine("Do you want to try to open it? (y/n)");
+            string answer = Console.ReadLine();
+            if((answer.ToLower() == "y"))
+            {
+                //Door.IsLocked();
+            }
+        }
+
+        
+
+     
+       
+       
+
+       
     }
 }
