@@ -11,12 +11,20 @@ namespace SpelGruppC1
         public bool Open = false;
         public bool Closed = true;
         public bool Locked = false;
+        public string location;
 
         public Door(bool open, bool closed, bool locked)
         {
             Open = open;
             Closed = closed;
             Locked = locked;
+        }
+        public Door(bool open, bool closed, bool locked, string location)
+        {
+            this.Open = open;
+            this.Closed = closed;
+            this.Locked = locked;
+            this.location = location;
         }
 
 

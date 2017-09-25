@@ -13,7 +13,7 @@ namespace SpelGruppC1
             Player player = new Player();
             House hus = new House("litet hus", 3, 3);
 
-            hus.HouseStoryLine();
+            hus.HouseStoryLine(player);
             
 
             Console.ReadLine();
