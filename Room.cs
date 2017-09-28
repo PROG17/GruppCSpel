@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace SpelGruppC1
 {
-    public class Room
+    public abstract class Room
     {
-        public string RoomSize { get; set; }
+        
         public int NumberOfDoors { get; set; }
-        public string Furniture { get; set; }
+       
 
-        public Room(string roomSize, int numberOfDoors, string furniture)
+        public Room(int numberOfDoors)
         {
-            RoomSize = roomSize;
+           
             NumberOfDoors = numberOfDoors;
-            Furniture = furniture;
+            
+        }
+
+        public virtual void PrintDescription()
+        {
+            Console.WriteLine("du står i ett mörkt rum");
         }
     }
 }

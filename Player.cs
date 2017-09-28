@@ -14,12 +14,43 @@ namespace SpelGruppC1
         public Player(){}
         public string Name { get; set; }
         public string[] Inventory { get; set; }
-    
 
-        public void ChooseDirection()
+        public void ShowInventory()
         {
-            Console.WriteLine("where do you want to go? \n {0} {1} {2} {3}", 
+            foreach(string item in inventory)
+            {
+                Console.Write(item + ", ");
+            }
+        }
+        public void ChooseForwardLeft()
+        {
+            Console.WriteLine("where do you want to go? \n {0} {1}",
+                               Direction.FORWARD, Direction.LEFT);
+            string answer = Console.ReadLine();
+
+            InFrontOfDoor(answer);
+        }      
+        public void ChooseForwardRight()
+        {
+            Console.WriteLine("where do you want to go? \n {0} {1}",
+                               Direction.FORWARD, Direction.RIGHT);
+            string answer = Console.ReadLine();
+
+            InFrontOfDoor(answer);
+        }
+        public void ChooseForwardLeftRight()
+        {
+            Console.WriteLine("where do you want to go? \n {0} {1} {2}", 
                                Direction.FORWARD, Direction.LEFT, 
+                               Direction.RIGHT);
+            string answer = Console.ReadLine();
+
+            InFrontOfDoor(answer);
+        }
+        public void ChooseForwardLeftRightBack()
+        {
+            Console.WriteLine("where do you want to go? \n {0} {1} {2} {3}",
+                               Direction.FORWARD, Direction.LEFT,
                                Direction.RIGHT, Direction.BACK);
             string answer = Console.ReadLine();
 
@@ -31,7 +62,7 @@ namespace SpelGruppC1
             Door door2 = new Door(false, true, true, "the middle door");
             Door door3 = new Door(false, true, true, "the right door");
 
-            if (chosenDoor == "Go forward")
+            if (chosenDoor.ToLower().Contains("forward"))
             {
                 Console.WriteLine("Your are standing in front of {0}", door2.location);
                 Console.WriteLine("Do you want to try to open it? (y/n)");
@@ -42,7 +73,7 @@ namespace SpelGruppC1
                 }
 
             }
-            else if (chosenDoor == "Go right")
+            else if (chosenDoor.ToLower().Contains("right"))
             {
                 Console.WriteLine("Your are standing in front of {0}", door3.location);
                 Console.WriteLine("Do you want to try to open it? (y/n)");
@@ -53,7 +84,7 @@ namespace SpelGruppC1
                 }
 
             }
-            else if (chosenDoor == "Go left") ///returns "You cant go back" ?!
+            else if (chosenDoor.ToLower().Contains("left")) 
             {
                 Console.WriteLine("Your are standing in front of {0}", door1.location);
                 Console.WriteLine("Do you want to try to open it? (y/n)");
@@ -66,26 +97,22 @@ namespace SpelGruppC1
             }
             else
             {
-                Console.WriteLine("you cant go back");
+                Console.WriteLine("try again");
                 //player.ChooseDirection();
             }
 
             
 
         }
+        public void UseKey(string rightkey)
+        {
+            //    if(inventory.Contains("blue key"))
+            //    {
+            //        door2.UnlockDoor(inventory[/*lägg till nyckelns index]*/]);
+            //    }
+        }
 
-        //public string GoInDirection(string answer)
-        //{
-        //    if (answer == "Go forward") {
-        //        Console.Write("You go forward to "); }
-        //    else if (answer == "Go back") {
-        //        Console.Write("You go back"); }
-        //    else if (answer == "Go left") {
-        //        Console.Write("You go left to "); }
-        //    else if (answer == "Go right"){
-        //        Console.Write("You go right to "); }
-        //    return answer;
-        //}
+        
 
 
     }

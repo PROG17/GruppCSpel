@@ -24,11 +24,8 @@ namespace SpelGruppC1
             this.Open = open;
             this.Closed = closed;
             this.Locked = locked;
-            this.location = location;
+            this.location = location; //Left, right, etc
         }
-
-
-
       
         public void OpenOrClosed()
         {
@@ -43,12 +40,12 @@ namespace SpelGruppC1
             if(Locked)
             { Console.WriteLine("The Door is Locked"); }
             else
-            { Console.WriteLine("The Door is not locked"); }
+            { Console.WriteLine("The Door is not locked so you open it");}
         }
 
         public void UnlockDoor(string key)
         {
-            if (key == "blue key")
+            if (key.ToLower() == "blue key")
             { Console.WriteLine("You opened the door"); }
             else
             { Console.WriteLine("Wrong key"); }
